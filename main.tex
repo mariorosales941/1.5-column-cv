@@ -20,6 +20,8 @@
 \usepackage{graphicx}       % for pictures
 \usepackage{microtype}      % for microtypography stuff
 \usepackage{xcolor}         % for colours
+\usepackage{multicol}       % for multiple columns in itemize
+\usepackage{hyperref}       % for hyperlinks
 
 
 % margin and column widths
@@ -83,6 +85,15 @@
 \newcommand{\cvdurationstyle}[1]{{\small\cvdurationfont\textcolor{cvdurationcolor}{#1}}}
 \newcommand{\cvheadingstyle}[1]{{\normalsize\cvheadingfont\textcolor{cvheadingcolor}{#1}}}
 
+% hyperlinks style
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+\urlstyle{same}
 
 % inter-item spacing
 % ------------------
@@ -244,22 +255,22 @@
 
     % address
     \cvpersonalinfolinewithicon{height=4mm}{072-location.pdf}{
-        Barrio El Pozo - Manz. 12 Viv. 19, Santa Fe
+        Barrio El Pozo - Manzana 12 Vivienda 19, Santa Fe
     }
 
     % phone number
     \cvpersonalinfolinewithicon{height=4mm}{067-phone.pdf}{
-        +549 0342\,155\, 947 \,097
+        +54 3425947097
     }
 
     % email address
     \cvpersonalinfolinewithicon{height=4mm}{070-envelop.pdf}{
-        mariorosales941@gmail.com.com
+        \href{mailto:mariorosales941@gmail.com}{mariorosales941@gmail.com}
     }
 
     % LinkedIn account
     \cvpersonalinfolinewithicon{height=4mm}{458-linkedin.pdf}{
-        mario-rosales
+        \href{https://www.linkedin.com/in/mario-rosales/}{mario-rosales}
     }
 
     % date of birth
@@ -272,25 +283,42 @@
 
 \cvsection{EXPERIENCIA LABORAL}
 
+% MUSIMUNDO
+\cvitem{
+    \cvdurationstyle{Septiembre 2019 - Junio 2021}
+}{
+    \cvtitle{Analista Desarrollador de Software}
+    \begin{itemize}
+        \item Soporte a Clientes Internos.
+        \item Mantenimiento y Reingeniería de Sistemas. 
+        \item Desarrollo y Mantenimiento de Sistemas Internos.
+    \end{itemize}
+}
+
 % ANCA
 \cvitem{
-    \cvdurationstyle{May 2017 - Actualidad}
+    \cvdurationstyle{Mayo 2017 - Agosto 2019}
 }{
-    \cvtitle{Contrato}
-    Desarrollador Web en ANCA SRL, Santa Fe.
+    \cvtitle{Desarrollador Web}
+    \href{https://ancasrl.com.ar/}{ANCA S.R.L.}
+    \begin{itemize}
+        \item Desarrollo y Mantenimiento del sitio oficial de la empresa.
+        \item Soporte técnico de infraestructura.
+        \item Dearrollo de un sistema web de gestión de ganado vacuno.
+    \end{itemize}
 }
 
 % Sadosky
 \cvitem{
-    \cvdurationstyle{Jul 2015 - Ago 2016}
+    \cvdurationstyle{Julio 2015 - Agosto 2016}
 }{
     \cvtitle{Instructor en Escuelas Secundarias, Fundación Manuel Sadosky - Universidad Nacional del Litoral, Santa Fe.}
-    Beca de trabajo para estudiantes en Servicio a Tercero destinado a dictar cursos de programación básica en escuelas secundarias de la ciudad de Santa Fe, y promocionar actividades de la Facultad de Ingeniería y Ciencias Hídricas y de la Fundación Dr. Manuel Sadosky de Investigación y Desarrollo en las Tecnologías de la Información y la Comunicación.
+    Beca para dictar cursos de programación básica en escuelas secundarias de la ciudad de Santa Fe, y promocionar actividades de la Facultad de Ingeniería y Ciencias Hídricas y de la Fundación Dr. Manuel Sadosky de Investigación y Desarrollo en las Tecnologías de la Información y la Comunicación.
 }
 
 % Pasantia no Resntada
 \cvitem{
-    \cvdurationstyle{Jul-Dic 2009}
+    \cvdurationstyle{Julio 2009 - Diciembre 2009} 
 }{
     \cvtitle{Pasantía no Rentada}
     Dirección Provincial de Catastro - Santa Fe
@@ -303,26 +331,27 @@
 
 % FICH
 \cvitem{
-    \cvdurationstyle{2010 - Actualidad}
+    \cvdurationstyle{Est Noviembre 2019}
 }{
-    \cvtitle{Estudios Universitarios}
-    Ingeniería en Informática, Facultad de Ingeniería y Ciencias Hídricas - Universidad Nacional del Litoral, Santa Fe. Actualmente desarrollando el Proyecto Final de Carrera.
+    \cvtitle{\href{http://fich.unl.edu.ar/planificaciones/carrera.php?id=3}{Ingeniería en Informática}}
+    
+    Facultad de Ingeniería y Ciencias Hídricas, Universidad Nacional del Litoral.
+    
+    Estado actual: finalizando el informe final del proyecto final de carrera.
+    
+    Tesis: Diseño y Desarrollo de un Software de Gestión y Seguimiento de Trazabilidad de Ganado Vacuno.
     \begin{itemize}
-        \item Tesis: Diseño y Desarrollo de un Software de Gestión y Seguimiento de Trazabilidad de Ganado Vacuno.
-        \begin{itemize}
-            \item Objetivo: Diseñar y desarrollar un sistema web destinado a los criadores y productores de ganado vacuno con el fin
-de brindarles una herramienta para la gestión y seguimiento de trazabilidad de bovinos.
-        \end{itemize}
+        \item Objetivo: Diseñar y desarrollar un sistema web destinado a criadores y productores de ganado vacuno, con el fin de brindarles una herramienta para la gestión y seguimiento de trazabilidad de bovinos.
     \end{itemize}
 }
 
 % Inglés Almirante Brown
-\cvitem{
-    \cvdurationstyle{2003-2009}
-}{
-    \cvtitle{Idioma Extrangero}
-    Instituto Superior de Profesorado No 8 – ALMIRANTE GUILLERMO BROWN.
-}
+%\cvitem{
+%    \cvdurationstyle{2003-2009}
+%}{
+%    \cvtitle{Idioma Extrangero}
+%    Instituto Superior de Profesorado No 8 – ALMIRANTE GUILLERMO BROWN.
+%}
 
 %Secundaria
 \cvitem{
@@ -336,63 +365,118 @@ de brindarles una herramienta para la gestión y seguimiento de trazabilidad de 
 \cvsection{CURSOS Y CERTIFICADOS}
 
 \cvitem{
+    \cvdurationstyle{Septiembre 2016}
+}{
+    \cvheadingstyle{\href{http://45jaiio.sadio.org.ar/}{45 Jornadas Argentinas de Informática}}, Buenos Aires
+    \begin{itemize}
+        \item Las JAIIOs se organizan como un conjunto de simposios separados, cada uno dedicado a un tema específico, de uno o dos días de duración, de tal forma de permitir la interacción de sus participantes.
+    \end{itemize}
+}
+
+\cvitem{
+    \cvdurationstyle{Septiembre 2015}
+}{
+    \cvheadingstyle{\href{http://44jaiio.sadio.org.ar/}{44 Jornadas Argentinas de Informática}}, Rosario, Santa Fe
+}
+
+\cvitem{
     \cvheadingstyle{Certificado de Aprobación}
 }{
-    \cvtitle{Curso de Desarrollo de Aplicaciones Web} Nivel 1 y 2, Facultad de Ingeniería y Ciencias Hídricas - UNL, Santa Fe.
+    \cvtitle{Curso de Desarrollo de Aplicaciones Web} Facultad de Ingeniería y Ciencias Hídricas - UNL, Santa Fe.
     \begin{itemize}
-        \item Nivel 1: Duración 30hs (Los días 13, 20 y 27 de Octubre, y 3, 10 y 17 de Noviembre de 2012) - Evaluación final: SI.
-        \item Nivel 2: Duración 30hs (Los días 4, 11 y 18 de Mayo, y 1, 8 y 15 de Junio de 2013) - Evaluación final: SI.
+        \item Objetivos: Diseñar y desarrollar aplicaciones web robustas, seguras y fáciles de mantener. Desarrollar aplicaciones web según arquitectura Modelo-Vista-Controlador. Aprovechar las ventajas del lenguage PHP.
+        %\item Level 2: Duration 30hs (The 4th, 11th and 18th of May, and 1st, 8th and 15th of June 2013) - Final evaluation: Yes.
+        %\item Level 1: Duration 30hs (The 13th, 20th and 27th of October, and 3, 10 and 17 November 2012) - Final evaluation: Yes.
     \end{itemize}
+    %\begin{itemize}
+     %   \item Nivel 1: Duración 30hs (Los días 13, 20 y 27 de Octubre, y 3, 10 y 17 de Noviembre de 2012) - Evaluación final: SI.
+      %  \item Nivel 2: Duración 30hs (Los días 4, 11 y 18 de Mayo, y 1, 8 y 15 de Junio de 2013) - Evaluación final: SI.
+    %\end{itemize}
 }
 
 \cvitem{
     \cvheadingstyle{Certificado de Aprobación}
 }{
     \cvtitle{Armador y Reparados de PC}
-    Curso Presencial Dictado y Certificado por Asociación Trabajadores del Estado (ATE), Reconocido por el Ministerio de Educación de la Provincia de Santa Fe. Según disposición Nro. 25/09.
-    Duración: 60 hs. cátedra.
+    
+    \begin{itemize}
+        \item Temas: Reparación y mantenimiento de computadoras. Instalación y administración de sistemas operativos, Windows y GNU/Linux.
+    \end{itemize}
+    %Curso Presencial Dictado y Certificado por Asociación Trabajadores del Estado (ATE), Reconocido por el Ministerio de Educación de la Provincia de Santa Fe. Según disposición Nro. 25/09.
+    %Duración: 60 hs. cátedra.
 }
 
 % skills
 % ------
 
-\cvsection{IDIOMAS}
 
-\vspace{\cvbetweensectionandheadingextraskipamount}
+%\cvsection{IDIOMAS}
+
+%\vspace{\cvbetweensectionandheadingextraskipamount}
 
 % languages
-\cvitem{
-    \cvheadingstyle{Español}
-}{
-    Nativo
-}
+%\cvitem{
+%    \cvheadingstyle{Español}
+%}{
+%    Nativo
+%}
 
-\cvitem{
-    \cvheadingstyle{Inglés}
-}{
-    Elemental
-}
+%\cvitem{
+%    \cvheadingstyle{Inglés}
+%}{
+%    Elemental
+%}
 
-\newpage
+%\newpage
 % Habilidades Informáticas
-\cvsection{HABILIDADES INFORMÁTICAS}
+\cvsection{HABILIDADES}
 
 \cvitem{
-    \cvheadingstyle{Conocimiento Básico}
+    \cvheadingstyle{Languages}
 }{
-    NodeJs, ExpressJs, .Net, Prolog, Scheme
+    Inglés - Elemental
+    \begin{itemize}
+        \item Instituto Superior de Profesorado No 8 – ALMIRANTE GUILLERMO BROWN.
+    \end{itemize}
+
+    Español – Nativo
 }
 
 \cvitem{
-    \cvheadingstyle{Conocimiento Intermedio}
+    \cvheadingstyle{Technologies}
 }{
-     Php, Html, Css, Javascript, JQuery, Laravel, VueJS, MySql, Postgre SQL, Java,  C++, Sql Server, Git, GitHub, LaTeX, Wordpress, MatLab, OpenCv, Joomla,  JasperReports, Gnu/linux, Windows,  Excel, Word, Power-Point.
-}
+    Conocimiento Básico
+    %\vspace{2mm}
+    \begin{multicols}{2}
+        \begin{itemize}
+            \item C++
+            \item Java
+            \item NodeJs
+            \item Git
+            \item Wordpress
+            \item LaTeX
+        \end{itemize}
+    \end{multicols}
+    %\vspace{2mm}
 
-\cvitem{
-    \cvheadingstyle{Hardware}
-}{
-    Mantenimiento y Reparación de PC.
+    Conocimiento Intermedio
+    %\vspace{1mm}
+    \begin{multicols}{2}
+        \begin{itemize}
+            \item \textsc{GNU\textbackslash Linux}
+            \item PostgreSQL
+            \item Laravel
+            \item PHP
+            \item MySQL
+            \item HTML5
+            \item CSS
+            \item JavaScript
+            \item Vue.js
+            \item .Net
+            \item Angular
+        \end{itemize}
+    \end{multicols}
+    %\vspace{-3mm}
 }
 
 % additional info
@@ -403,36 +487,31 @@ de brindarles una herramienta para la gestión y seguimiento de trazabilidad de 
 \vspace{\cvbetweensectionandheadingextraskipamount}
 
 % driving licence
-\cvitem{
-    \cvheadingstyle{Licencia de Conducir}
-}{
-    Disponibilidad para viajar.
-}
+%\cvitem{
+%    \cvheadingstyle{Licencia de Conducir}
+%}{
+%    Disponibilidad para viajar.
+%}
 
 % interests
 \cvitem{
     \cvheadingstyle{Intereses}
 }{
-    Tecnología, Open-Source, Programación, Big Data, IoT, Business Intelligence, Inteligencia Computacional, Procesamiento Digital de Imágenes, Metodologías de Desarrollo Ágil de Software
+    Tecnologías Web, IoT, Metodologías de Desarrollo Ágil de Software.
 }
 
 % actividades
 \cvitem{
     \cvheadingstyle{Actividades}
 }{
-    Gimnasio, Correr, Deportes especialmente rugby
+    Gimnasio, Correr, Deportes especialmente rugby.
 }
 
 % otros datos
 \cvitem{
     \cvheadingstyle{Otros datos}
 }{
-    \begin{itemize}
-        \item Actitud Proactiva
-        \item Rápida asimilación de Contenidos
-        %\item Predisposición para el trabajo en equipo
-        \item Habilidades comunicativas con predisposición para el trabajo en equipo
-    \end{itemize}
+    Actitud Proactiva. Habilidades comunicativas. Predisposición para el trabajo en equipo.
 }
 
 \end{document}
